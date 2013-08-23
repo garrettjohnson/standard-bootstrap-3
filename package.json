@@ -1,0 +1,20 @@
+{
+  "name": "standard-bootstrap-3",
+  "version": "0.1.0",
+  "description": "This is a custom child theme for my Standard using Bootstrap 3.",
+  "author": "Jason Bradley <http://jasonbradley.me>",
+  "homepage": "http://jasonbradley.me",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbrad/standard-bootstrap-3.git"
+  },
+  "engine": "node >= 0.4.1",
+  "private": "true",
+  "devDependencies": {
+    "grunt-bower-task": "~0.2.3",
+    "grunt-contrib-uglify": "~0.2.x",
+    "grunt-contrib-watch": "~0.5.x",
+    "grunt-contrib-less": "~0.6.x",
+    "grunt-contrib-compress": "~0.5.2"
+  }
+}
