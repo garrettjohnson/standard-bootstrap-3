@@ -1,10 +1,10 @@
-# Standard Child Theme Kit
+# Standard Bootstrap 3
 
 ## Description
 
-This is a "getting started" child theme kit for [Standard](http://standardtheme.com), crafted by [8BIT](http://8bit.io).
+This is a custom child theme kit for [Standard](http://standardtheme.com), crafted by [Jason Bradley](http://jasonbradley.me).
 
-The [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit) requires Standard 3.
+The [Standard Bootstrap 3](https://github.com/jbrad/standard-bootstrap-3) requires Standard 3.
 
 ## Installation
 
@@ -14,7 +14,7 @@ There are two ways to install WordPress themes / child themes: via the WordPress
 
 ### Using the WordPress Dashboard
 
-1. Download the [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit/zipball/master).
+1. Download the [Standard Bootstrap 3](https://github.com/jbrad/standard-bootstrap-3).
 2. Locate the "Appearance" menu.
 3. In the "Appearance" menu, click on "Themes".
 4. On the "Themes" page, click on the "Install Themes" tab.
@@ -24,10 +24,10 @@ There are two ways to install WordPress themes / child themes: via the WordPress
 
 ### Using FTP
 
-1. Download the [Standard Child Theme Kit](https://github.com/eightbit/standard-child-theme-kit/zipball/master).
-2. Unzip the ```eightbit-standard-child-theme-kit.zip``` archive on your computer.
+1. Download the [Standard Bootstrap 3](https://github.com/jbrad/standard-bootstrap-3/archive/master.zip).
+2. Unzip the ```standard-bootstrap-3.zip``` archive on your computer.
 3. Connect to your server via FTP.
-4. Upload the extracted ```eightbit-standard-child-theme-kit``` directory to the ```/wp-content/themes/``` directory on your server.
+4. Upload the extracted ```standard-bootstrap-3``` directory to the ```/wp-content/themes/``` directory on your server.
 6. In the WordPress Dashboard, navigate to the "Themes" page under the "Appearance" menu.
 7. Locate "Standard Child Theme Kit" and click "Activate".
 
@@ -40,11 +40,11 @@ If you happened to name Standard 3 theme directory anything else besides "standa
 ## Frequently Asked Questions
 
 ### Where can I find support?
-* On our [support forum](http://support.8bit.io).
+* [Contact Me](http://jasonbradley.me/contact)
 
 ## Credit
 
-* [8BIT](http://8bit.io)
+* [Jason Bradley](http://jasonbradley.me)
 
 ## License
 
