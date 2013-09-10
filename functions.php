@@ -57,16 +57,20 @@ function standard_child_theme_kit_reorder_styles() {
     wp_dequeue_style( 'bootstrap-responsive' );
 
     // bootstrap
-    wp_enqueue_style( 'bootstrap-3', get_stylesheet_directory_uri() . '/css/bootstrap.css', false, STANDARD_THEME_VERSION );
+    wp_enqueue_style( 'bootstrap-3', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', false, STANDARD_THEME_VERSION );
 
     // child theme
-    wp_enqueue_script( 'child-theme', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array( 'jquery' ), STANDARD_THEME_VERSION );
+    wp_enqueue_script( 'child-theme', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), STANDARD_THEME_VERSION );
 
 } // end standard_child_theme_kit_reorder_styles
 
 add_action( 'wp_enqueue_scripts', 'standard_child_theme_kit_reorder_styles', 1000 );
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ DO NOT MODIFY END /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
+
+require_once locate_template('/lib/utils.php');             // Custom nav modifications
+require_once locate_template('/lib/nav.php');             // Custom nav modifications
+
 
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ CUSTOMIZATIONS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */
