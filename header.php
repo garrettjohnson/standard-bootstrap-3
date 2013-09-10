@@ -31,30 +31,20 @@
         <?php } // end if ?>
         <?php $global_options = get_option( 'standard_theme_global_options' ); ?>
         <?php if( '' != $global_options['google_analytics'] ) { ?>
-            <?php if( is_user_logged_in() ) { ?>
-                <!-- Google Analytics is restricted only to users who are not logged in. -->
-            <?php } else { ?>
-                <script type="text/javascript">
-                    var _gaq = _gaq || [];
-                    _gaq.push(['_setAccount', '<?php echo $global_options[ 'google_analytics' ] ?>']);
-                    _gaq.push(['_trackPageview']);
-                    _gaq.push(['_trackPageLoadTime']);
-
-                    <?php if( 0 != strlen( $global_options[ 'google_analytics_domain'] ) ) { ?>
-                    _gaq.push(['_setDomainName', '<?php echo $global_options[ 'google_analytics_domain' ] ?>']);
-                    <?php } // end if/else ?>
-
-                    <?php if( 1 == $global_options[ 'google_analytics_linker'] ) { ?>
-                    _gaq.push(['_setAllowLinker', true]);
-                    <?php } // end if/else ?>
-
-                    (function() {
-                        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-                        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-                    })();
+            <?php if(!is_user_logged_in() ) { // Google Analytics is restricted only to users who are not logged in. ?>
+                <script>
+                  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+                  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+                  <?php if( 0 != strlen( $global_options[ 'google_analytics_domain'] ) ) { ?>
+                    ga('create', '<?php echo $global_options[ 'google_analytics' ] ?>', '<?php echo $global_options[ 'google_analytics_domain' ] ?>');
+                  <?php } else { ?>
+                    ga('create', '<?php echo $global_options[ 'google_analytics' ] ?>');
+                  <?php } // end if/else ?>
+                  ga('send', 'pageview');
                 </script>
-            <?php } // end if/else ?>
+            <?php } // end !is_user_logged_in ?>
         <?php } // end if ?>
         <?php if( standard_google_custom_search_is_active() ) { ?>
             <?php $gcse = get_option( 'widget_standard-google-custom-search' ); ?>
