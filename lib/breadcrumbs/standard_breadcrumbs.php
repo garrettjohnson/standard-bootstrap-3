@@ -52,16 +52,16 @@ class Standard_Breadcrumbs {
 			} elseif( is_archive() ) {
 
 				if( is_author() ) {
-					$str_breadcrumb .= self::get_home_link() . __( 'Archives', 'standard' ) . ' ' . __( '/', 'standard' ) . ' ' . self::get_author_display_name(); 
+					$str_breadcrumb .= self::get_home_link() . '<li>' . __( 'Archives', 'standard' ) . '</li>'  . self::get_author_display_name(); 
 				} elseif( '' != get_query_var( 'year' ) || '' != get_query_var( 'monthnum' ) || '' != get_query_var( 'm' ) || '' != get_query_var( 'day' ) ) {
-					$str_breadcrumb .= self::get_home_link() . __( 'Archives', 'standard' ) . ' ' . __( '/', 'standard' ) . ' ' . self::get_date_labels(); 
+					$str_breadcrumb .= self::get_home_link() . '<li>' . __( 'Archives', 'standard' ) . '</li>' . ' ' . __( '/', 'standard' ) . ' ' . self::get_date_labels(); 
 				} else {
-					$str_breadcrumb .= self::get_home_link() . __( 'Archives', 'standard' ) . ' ' . __( '/', 'standard' ) . ' ' . self::get_category_links();
+					$str_breadcrumb .= self::get_home_link() . '<li>' . __( 'Archives', 'standard' ) . '</li>' . self::get_category_links();
 				} // end if
 				
 			} else if( is_search() ) {
 			
-				$str_breadcrumb .= self::get_home_link() . __( 'Search', 'standard' ) . ' ' . __( '/', 'standard' ) . ' ' . self::get_search_query();
+				$str_breadcrumb .= self::get_home_link() . '<li>' . __( 'Search', 'standard' ) . '</li>' . self::get_search_query();
 				
 			} // end if/else
 			
@@ -289,7 +289,7 @@ class Standard_Breadcrumbs {
 			$query = $_GET['s'];
 		} // end if/else
 		
-		return '<span itemprop="title">' . trim( esc_html( $query, 1 ) ) . '</span>';
+		return '<li>' . trim( esc_html( $query, 1 ) ) . '</li>';
 	
 	} // end get_search_query
 	
@@ -318,9 +318,9 @@ class Standard_Breadcrumbs {
 			$author_data = $author_data->data;
 		} // end if
 
-		$author_link = '<a href="' . esc_html( get_author_posts_url( $author_data->ID ) ) . '">';
+		$author_link = '<li><a href="' . esc_html( get_author_posts_url( $author_data->ID ) ) . '">';
 			$author_link .= $author_data->display_name;
-		$author_link .= '</a>';
+		$author_link .= '</a></li>';
 		
 		return $author_link;
 
