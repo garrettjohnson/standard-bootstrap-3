@@ -30,7 +30,7 @@ if( 1 == get_post_meta( get_the_ID(), 'standard_seo_post_level_layout', true ) )
 				<?php if ( have_posts() ) { ?>
 					<?php while ( have_posts() ) { ?>
 					<?php the_post(); ?>
-					<?php get_template_part( 'loop', get_post_format() ); ?>
+					<?php get_template_part( 'templates/content', get_post_format() ); ?>
 
 						<?php $publishing_options = get_option( 'standard_theme_publishing_options' ); ?>
 						<?php $display_author_box = isset( $publishing_options['display_author_box'] ) ? $publishing_options['display_author_box'] : ''; ?>

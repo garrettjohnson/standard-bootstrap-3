@@ -34,7 +34,7 @@
 					
 						<?php while ( have_posts() ) { ?>
 							<?php the_post(); ?>
-							<?php get_template_part( 'loop', get_post_format() ); ?>
+							<?php get_template_part( 'templates/content', get_post_format() ); ?>
 						<?php } // end while ?>
 				
 						<?php get_template_part( 'pagination' ); ?>
