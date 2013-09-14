@@ -13,8 +13,12 @@
 <div id="wrapper">
 	<div class="container">
 		<div class="row">
-			
-			<div id="main" class="col-md-12 clearfix" role="main">
+
+            <?php if ( 'left_sidebar_layout' == $presentation_options['layout'] ) { ?>
+                <?php get_sidebar(); ?>
+            <?php } // end if ?>
+
+            <div id="main" class="<?php echo 'full_width_layout' == $presentation_options['layout'] ? 'col-md-12' : 'col-md-8'; ?> clearfix" role="main">
 			
 				<?php get_template_part( 'breadcrumbs' ); ?>
 				
@@ -58,6 +62,10 @@
 					<?php } // end while ?>
 				<?php } // end if  ?>
 			</div><!-- /#main -->
+
+            <?php if ( 'right_sidebar_layout' == $presentation_options['layout'] ) { ?>
+                <?php get_sidebar(); ?>
+            <?php } // end if ?>
 	
 		</div><!-- /.row -->
 	</div><!-- /.container -->

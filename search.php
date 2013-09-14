@@ -18,8 +18,8 @@
             <?php if ( 'left_sidebar_layout' == $presentation_options['layout'] ) { ?>
                 <?php get_sidebar(); ?>
             <?php } // end if ?>
-	
-			<div id="main" class="col-md-8 clearfix" role="main">
+
+            <div id="main" class="<?php echo 'full_width_layout' == $presentation_options['layout'] ? 'col-md-12' : 'col-md-8'; ?> clearfix" role="main">
 				
 				<?php // Even if google custom search is active, we may be coming from the 4040 page so we'll run this template. ?>
 				<?php if( ! standard_google_custom_search_is_active() || '' != get_query_var( 's' ) ) { ?>

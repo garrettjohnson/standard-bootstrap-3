@@ -1,13 +1,28 @@
 # Changelog
 
-## 1.0 (June 3rd, 2013)
+## 0.2.0 (Aug 24rd, 2013)
 
 ### Modifications
 
-* Added Font Awesome files via CDN in functions.php
+* Added logic back for full width display option in Standard > Presentation
 
 ### Change Set
 
-* functions.php
+* bower.json
+* image.php
+* index.php
+* package.json
+* page-offline-mode.php
+* page.php
+* search.php
+* single.php
 * style.css
-* screenshot.png
+* style.less
+* template-archives.php
+* template-sitemap.php
+
+## 1.0 (Aug 23rd, 2013)
+
+### Modifications
+
+* Inital commit

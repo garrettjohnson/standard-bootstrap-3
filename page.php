@@ -18,7 +18,7 @@
                 <?php get_sidebar(); ?>
             <?php } // end if ?>
 
-            <div id="main" class="col-md-8 clearfix" role="main">
+            <div id="main" class="<?php echo 'full_width_layout' == $presentation_options['layout'] ? 'col-md-12' : 'col-md-8'; ?> clearfix" role="main">
 
                 <?php
                     if( ! is_front_page() ) {
