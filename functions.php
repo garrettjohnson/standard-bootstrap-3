@@ -105,8 +105,8 @@ function standard_add_theme_features() {
 
 // Include our customized plugin instead of the stock one
     include_once( get_stylesheet_directory() . '/lib/standard-ad-125x125/plugin.php' );
+    include_once( get_stylesheet_directory() . '/lib/activity/plugin.php' );
 
-    standard_add_plugin( '/lib/activity/plugin.php' );
     standard_add_plugin( '/lib/google-custom-search/plugin.php' );
     standard_add_plugin( '/lib/standard-ad-300x250/plugin.php' );
     standard_add_plugin( '/lib/standard-ad-billboard/plugin.php' );
