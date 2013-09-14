@@ -115,3 +115,10 @@ function standard_add_theme_features() {
 
 } // end add_theme_features
 add_action( 'after_setup_theme', 'standard_add_theme_features' );
+
+function standard_search_form($form) {
+  $form = '';
+  locate_template('/templates/searchform.php', true, false);
+  return $form;
+}
+add_filter('get_search_form', 'standard_search_form');
