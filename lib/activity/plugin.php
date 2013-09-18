@@ -171,7 +171,7 @@ class Activity_Tabs extends WP_Widget {
 				
 					if( $post_count > 0 ) {
 						if($i == 0)
-							$html .= '<li><a href="#recent" class="active" data-toggle="tab">' . __( 'Recent', 'standard' ) . '</a></li>';
+							$html .= '<li class="active"><a href="#recent" data-toggle="tab">' . __( 'Recent', 'standard' ) . '</a></li>';
 						else
 							$html .= '<li><a href="#recent" data-toggle="tab">' . __( 'Recent', 'standard' ) . '</a></li>';
 						$i++;
@@ -179,7 +179,7 @@ class Activity_Tabs extends WP_Widget {
 					
 					if( $popular_count > 0 ) {
 						if($i == 0)
-							$html .= '<li><a href="#popular" data-toggle="tab">' . __( 'Popular', 'standard' ) . '</a></li>';
+							$html .= '<li class="active"><a href="#popular" data-toggle="tab">' . __( 'Popular', 'standard' ) . '</a></li>';
 						else
 							$html .= '<li><a href="#popular" data-toggle="tab">' . __( 'Popular', 'standard' ) . '</a></li>';
 						$i++;
@@ -187,7 +187,7 @@ class Activity_Tabs extends WP_Widget {
 					
 					if( $comment_count > 0 ) {
 						if($i == 0)
-							$html .= '<li><a href="#pop-comments" data-toggle="tab">' . __( 'Comments', 'standard' ) . '</a></li>';
+							$html .= '<li class="active"><a href="#pop-comments" data-toggle="tab">' . __( 'Comments', 'standard' ) . '</a></li>';
 						else
 							$html .= '<li><a href="#pop-comments" data-toggle="tab">' . __( 'Comments', 'standard' ) . '</a></li>';
 						$i++;
@@ -195,7 +195,7 @@ class Activity_Tabs extends WP_Widget {
 					
 					if( $tag_count > 0 ) {
 						if($i == 0)
-							$html .= '<li><a href="#tags" data-toggle="tab">' . __( 'Tags', 'standard' ) . '</a></li>';
+							$html .= '<li class="active"><a href="#tags" data-toggle="tab">' . __( 'Tags', 'standard' ) . '</a></li>';
 						else
 							$html .= '<li><a href="#tags" data-toggle="tab">' . __( 'Tags', 'standard' ) . '</a></li>';
 						$i++;
