@@ -204,21 +204,26 @@ class Activity_Tabs extends WP_Widget {
 				$html .= '</ul>';
 				
 				$html .= '<div class="tab-content">';
-				
+					$x = 0;
+
 					if( $post_count > 0 ) {
-						$html .= self::get_latest_posts( $post_count );
+						$html .= self::get_latest_posts( $post_count, $x );
+						$x++;
 					} // end if
 						
 					if( $popular_count > 0 ) {
-						$html .= self::get_popular_posts( $popular_count );
+						$html .= self::get_popular_posts( $popular_count, $x );
+						$x++;	
 					} // end if
 					
 					if( $comment_count > 0 ) {
-						$html .= self::get_latest_comments( $post, $comment_count );
+						$html .= self::get_latest_comments( $post, $comment_count, $x );
+						$x++;	
 					} // end if
 						
 					if( $tag_count ) {
-						$html .= self::get_tags( $tag_count );
+						$html .= self::get_tags( $tag_count, $x );
+						$x++;	
 					} // end if
 						
 				$html .= '</div><!-- /.tab-content -->'; 
@@ -239,7 +244,7 @@ class Activity_Tabs extends WP_Widget {
 	 * @since	3.0
 	 * @version	3.0
 	 */
-	private function get_latest_posts( $post_count ) {
+	private function get_latest_posts( $post_count, $x ) {
 	
 		// Get the latest posts
 		$latest_posts = get_posts(
@@ -251,13 +256,17 @@ class Activity_Tabs extends WP_Widget {
 		);
 
 		// Create the markup for the listing
-		$html = '<div class="tab-pane" id="recent">';
+		if($x == 0) {
+			$html = '<div class="tab-pane active" id="recent">';
+		} else {
+			$html = '<div class="tab-pane" id="recent">';
+		}
 			$html .= '<ul class="latest-posts">';
 
 			if( count( $latest_posts ) > 0 ) {
 						
 				foreach( $latest_posts as $post ) {
-				
+					
 					$html .= '<li class="clearfix">';
 						
 						// Add the small featured image
@@ -320,7 +329,7 @@ class Activity_Tabs extends WP_Widget {
 	 * @since	3.0
 	 * @version	3.0
 	 */
-	private function get_popular_posts( $popular_count ) {
+	private function get_popular_posts( $popular_count, $x ) {
 	
 		$args = array(
 			'orderby'				=>	'comment_count',
@@ -330,7 +339,11 @@ class Activity_Tabs extends WP_Widget {
 		);
 		$popular_posts = new WP_Query( $args );
 
-		$html = '<div id="popular" class="tab-pane">';
+		if($x == 0) {
+			$html = '<div class="tab-pane active" id="popular">';
+		} else {
+			$html = '<div class="tab-pane" id="popular">';
+		}
 		$html .= '<ul class="popular-posts">';
 		if( $popular_posts->have_posts() ) { 
 		
@@ -417,7 +430,7 @@ class Activity_Tabs extends WP_Widget {
 	 * @since	3.0
 	 * @version	3.0
 	 */
-	private function get_latest_comments( $post, $comment_count ) {
+	private function get_latest_comments( $post, $comment_count, $x ) {
 
 		// Get the 10 most recent comments
 		$comments = get_comments(	
@@ -428,7 +441,11 @@ class Activity_Tabs extends WP_Widget {
 		);
 		
 		// Create the markup for the listing
-		$html = '<div id="pop-comments" class="tab-pane">';
+		if($x == 0) {
+			$html = '<div class="tab-pane active" id="pop-comments">';
+		} else {
+			$html = '<div class="tab-pane" id="pop-comments">';
+		}
 			$html .= '<ul class="latest-comments">';
 
 			if( count( $comments ) > 0 ) {
@@ -491,7 +508,7 @@ class Activity_Tabs extends WP_Widget {
 	 * @since	3.0
 	 * @version	3.0
 	 */
-	private function get_tags( $tag_count ) {
+	private function get_tags( $tag_count, $x ) {
 
 		$tags = wp_tag_cloud( 
 				 	array( 
@@ -505,7 +522,13 @@ class Activity_Tabs extends WP_Widget {
 				 );
 
 		// Create the markup
-		$html = '<div id="tags" class="tagcloud tab-pane">';		
+
+		if($x == 0) {
+			$html = '<div id="tags" class="tagcloud tab-pane active">';
+		} else {
+			$html = '<div id="tags" class="tagcloud tab-pane">';
+		}
+				
 			$html .= '<div class="post-tags">';
 				if( $tags && count( $tags ) > 0 ) {
 					foreach( $tags as $tag ) {
