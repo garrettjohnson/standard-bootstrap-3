@@ -1,0 +1,15 @@
+.format-chat .post-header {
+margin-bottom: 0;
+border-bottom: 0;
+background-color: #ebebeb;
+}
+
+.format-chat .glyphicon-comment {
+font-size: 48px;
+}
+
+.format-chat .post-header .entry-content {
+padding: 0 10px;
+min-height: 60px;
+font-family: Monaco,Menlo,Consolas,"Courier New",monospace;
+}

@@ -58,9 +58,12 @@ function standard_child_theme_kit_reorder_styles() {
 
     // bootstrap
     wp_enqueue_style( 'bootstrap-3', get_stylesheet_directory_uri() . '/assets/css/bootstrap.css', false, STANDARD_THEME_VERSION );
+    wp_enqueue_style( 'glj', get_stylesheet_directory_uri() . '/assets/css/glj.css', false, STANDARD_THEME_VERSION );
 
     // child theme
     wp_enqueue_script( 'child-theme', get_stylesheet_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), STANDARD_THEME_VERSION );
+
+    wp_enqueue_script( 'gljextras', get_stylesheet_directory_uri() . '/assets/js/gljextras.js', array( 'jquery' ), STANDARD_THEME_VERSION );
 
 } // end standard_child_theme_kit_reorder_styles
 
@@ -92,7 +95,8 @@ function standard_add_theme_features() {
             'image',
             'link',
             'quote',
-            'video'
+            'video',
+            'chat'
         )
     );
 
