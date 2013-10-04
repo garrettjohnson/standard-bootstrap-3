@@ -57,14 +57,14 @@
 							<?php $global_options = get_option( 'standard_theme_global_options' ); ?>		
 							<div id="credit">
 								<?php 
-									$standard_url = 'http://standardtheme.com/?utm_source=standard-theme&amp;utm_medium=footer&amp;utm_content=wp-org&amp;utm_campaign=Standard%2BFooter';
-									$eightbit_url = 'http://8bit.io/?utm_source=standard-theme&amp;utm_medium=footer&amp;utm_content=wp-org&amp;utm_campaign=Standard%2BFooter';
+									$standard_url = 'http://arriving.co/standard?utm_source=standard-theme&amp;utm_medium=footer&amp;utm_content=wp-org&amp;utm_campaign=Standard%2BFooter';
+									$arriving_url = 'http://arriving.co/?utm_source=standard-theme&amp;utm_medium=footer&amp;utm_content=wp-org&amp;utm_campaign=Standard%2BFooter';
 								?>
 								
 								<?php if( null != get_page_by_path( 'privacy-policy' ) && 0 != get_page_by_path( 'privacy-policy' )->ID && 'publish' == get_page_by_path( 'privacy-policy' )->post_status ) { ?>							
 									<?php printf( __( '&copy; %1$s %2$s &mdash; %3$s &mdash; %4$s by %5$s', 'standard' ), date( 'Y' ), '<a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a>', '<a href="' . get_permalink( get_page_by_path( 'privacy-policy' )->ID ) . '">Privacy Policy</a>', '<a href="' . $standard_url . '" target="_blank">Standard</a>', '<a href="' . $eightbit_url . '" target="_blank">8BIT</a>' ); ?>
 								<?php } else { ?>
-									<?php printf( __( '&copy; %1$s %2$s &mdash; %3$s by %4$s', 'standard' ), date( 'Y' ), '<a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a>', '<a href="' . $standard_url . '" target="_blank">Standard</a>', '<a href="' . $eightbit_url . '" target="_blank">8BIT</a>' ); ?>
+									<?php printf( __( '&copy; %1$s %2$s &mdash; %3$s by %4$s', 'standard' ), date( 'Y' ), '<a href="' . home_url() . '">' . get_bloginfo( 'name' ) . '</a>', '<a href="' . $standard_url . '" target="_blank">Standard</a>', '<a href="' . $arriving_url . '" target="_blank">Arriving.Co</a>' ); ?>
 								<?php } // end if/else ?>
 								
 							</div><!-- /#credits -->
