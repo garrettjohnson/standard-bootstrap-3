@@ -73,7 +73,7 @@ add_action( 'wp_enqueue_scripts', 'standard_child_theme_kit_reorder_styles', 100
 
 require_once locate_template('/lib/utils.php');             // Custom nav modifications
 require_once locate_template('/lib/nav.php');             // Custom nav modifications
-
+require_once locate_template('/lib/cleanup.php');             // Custom nav modifications
 
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ CUSTOMIZATIONS /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/ */

@@ -101,7 +101,7 @@ function roots_clean_style_tag($input) {
   $media = $matches[3][0] !== '' && $matches[3][0] !== 'all' ? ' media="' . $matches[3][0] . '"' : '';
   return '<link rel="stylesheet" href="' . $matches[2][0] . '"' . $media . '>' . "\n";
 }
-// TEMP add_filter('style_loader_tag', 'roots_clean_style_tag');
+add_filter('style_loader_tag', 'roots_clean_style_tag');
 
 /**
  * Add and remove body_class() classes
@@ -255,12 +255,3 @@ function roots_request_filter($query_vars) {
 }
 add_filter('request', 'roots_request_filter');
 
-/**
- * Tell WordPress to use searchform.php from the templates/ directory. Requires WordPress 3.6+
- */
-function roots_get_search_form($form) {
-  $form = '';
-  locate_template('/templates/searchform.php', true, false);
-  return $form;
-}
-add_filter('get_search_form', 'roots_get_search_form');
