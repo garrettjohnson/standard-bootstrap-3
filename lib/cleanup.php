@@ -190,6 +190,8 @@ add_action('admin_init', 'roots_remove_dashboard_widgets');
 /**
  * Clean up the_excerpt()
  */
+define('POST_EXCERPT_LENGTH', 40); // Length in words for excerpt_length filter (http://codex.wordpress.org/Plugin_API/Filter_Reference/excerpt_length)
+
 function roots_excerpt_length($length) {
   return POST_EXCERPT_LENGTH;
 }

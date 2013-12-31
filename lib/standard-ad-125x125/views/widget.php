@@ -11,7 +11,7 @@
 <?php $global_options = get_option( 'standard_theme_global_options' ); $default_url = ''; ?>
 
 <?php echo isset( $args['before_widget'] ) ? $args['before_widget'] : ''; ?>
-	<div class="standard-ad-row">
+	<div class="standard-ad-row widget standard-ad-125x125">
 		<ul class="thumbnails mobile-2">
 			<li class="col-md-6">
 				<div class="thumbnail">

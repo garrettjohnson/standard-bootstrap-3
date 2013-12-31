@@ -8,7 +8,7 @@
  */
 ?>
 
-<div id="post-<?php the_ID(); ?>" <?php post_class( 'post clearfix' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post clearfix' ); ?>>
 
     <div class="aside-date">
         <span class="the-date"><?php the_time('M'); ?></span>
@@ -35,14 +35,5 @@
         ?>
     </div><!-- /.entry-content -->
 
-    <div class="post-meta clearfix">
-
-        <div class="meta-comment-link pull-right">
-            <a class="pull-right post-link" href="<?php the_permalink(); ?>" title="<?php esc_attr_e( 'permalink', 'standard' ); ?>">&nbsp;<span class="glyphicon glyphicon-link"></span></a>
-            <?php if ( '' != get_post_format() ) { ?>
-                <span class="the-comment-link"><?php comments_popup_link( __( 'Leave a comment', 'standard' ), __( '1 Comment', 'standard' ), __( '% Comments', 'standard' ), '', ''); ?></span>
-            <?php } // end if ?>
-        </div><!-- /meta-comment-link -->
-
-    </div><!-- /.post-meta -->
-</div><!-- /#post -->
+    <?php get_template_part( 'templates/meta', 'footer' ); ?>
+</article><!-- /#post -->

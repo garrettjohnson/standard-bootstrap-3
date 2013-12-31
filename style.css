@@ -1,14 +1,13 @@
 /*!
-Theme Name: Bootstrap 3 Child Theme
-Theme URI: http://jasonbradley.me/child-themes
-Version: 0.2.0
+Theme Name: Tarmac DEV
+Theme URI: http://arriving.co/tarmac
+Version: 0.1
 Description: This is a child theme for Standard 3.
-Author: Jason Bradley
-Author URI: http://jasonbradley.me
-Author Email: jason.bradley@me.com
+Author: Garrett Johnson
+Author URI: http://arriving.co
+Author Email: garrett@arriving.co
 License: GNU General Public License v3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Template: standard
 */
 
 .dark_gradient {
@@ -289,16 +288,6 @@ body {
     background-image: -o-linear-gradient(top,#202020,#1c1c1c);
     background-image: -ms-linear-gradient(top,#202020,#1c1c1c);
     filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#202020',EndColorStr='#1c1c1c');
-}
-
-.navbar .nav>li>a {
-    padding: 11px 10px 10px;
-    color: #999;
-    text-shadow: none;
-}
-
-.navbar .nav>li>a:hover {
-    color: #fff;
 }
 
 .navbar .nav>.active>a,.navbar .nav>.active>a:hover,.navbar .nav>.active>a:focus {
@@ -2229,3 +2218,20 @@ td.gsc-table-cell-thumbnail {
 
 
 .post.format-link .post-header{padding-left:0;background-image:none}.post.format-link .post-header .glyphicon.glyphicon-link{font-size:42px;padding-right:20px}.format-aside .aside-date{padding:2px;font-size:11px}
+
+.format-gallery {
+display: block;
+overflow: hidden;
+margin-bottom: 20px;
+max-width: 100%;
+}
+
+.format-gallery .entry-content {
+overflow: hidden;
+padding: 0;
+}
+
+.format-gallery .entry-content p {
+margin: 20px;
+}
+
